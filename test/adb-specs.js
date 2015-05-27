@@ -21,19 +21,25 @@ describe('ADB', () => {
   it.skip('should error out if binary not persent', async () => {
     // TODO write a negative test
   });
+  it('should return true for aapt present', async () => {
+    let adb = new ADB();
+    let flag = await adb.isAaptPresent();
+    flag.should.be.true;
+  });
+  it('should return true for zipAlign present', async () => {
+    let adb = new ADB();
+    let flag = await adb.isZiAlignPresent();
+    flag.should.be.true;
+  });
 });
 
 describe.skip('ADB To be implemented methods', () => {
-  it('checkAaptPresent', async () => { });
-  it('checkZipAlignPresent', async () => { });
-  it('exec', async () => { });
-  it('shell', async () => { });
-  it('spawn', async () => { });
-  it('processFromManifest', async () => { });
-  it('packageAndLaunchActivityFromManifest', async () => { });
+
+  //it('processFromManifest', async () => { });
+  //it('packageAndLaunchActivityFromManifest', async () => { });
   it('processExists', async () => { });
-  it('compileManifest', async () => { });
-  it('insertManifest', async () => { });
+  //it('compileManifest', async () => { });
+  //it('insertManifest', async () => { });
   it('signWithDefaultCert', async () => { });
   it('signWithCustomCert', async () => { });
   it('sign', async () => { });
@@ -111,7 +117,7 @@ describe.skip('ADB To be implemented methods', () => {
   it('enableIME', async () => { });
   it('disableIME', async () => { });
   it('setIME', async () => { });
-  it('hasInternetPermissionFromManifest', async () => { });
+  //it('hasInternetPermissionFromManifest', async () => { });
   it('reboot', async () => { });
   it('getAdbServerPort', async () => { });
 });
